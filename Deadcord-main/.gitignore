@@ -1,7 +1,0 @@
-ffmpeg.exe
-tokens.txt
-**/__pycache__
-output/
-.idea/
-venv/
-.git/

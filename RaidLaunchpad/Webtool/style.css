@@ -1,0 +1,50 @@
+*{
+
+}
+html,
+body{
+    width: 90%;
+    color: #FE72F3;
+
+ background: #2B2B2B;
+    height: 100%;
+}
+ul{
+    list-style: none;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    gap: 20px; /* distance between list items */
+    grid-template-columns: 3fr 3fr 3fr;
+    margin-left: 70px;
+}
+li{
+
+    width: 320px;
+    height: 220px;
+    background: #494949;
+    border: 2px solid #1d1c1c;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+input{
+    width: 90%;
+    margin: 10px;
+    height: 30px;
+    border-radius: 5px;
+
+}
+button{
+    width: 93%;
+    margin: 10px;
+    height: 35px;
+    border-radius: 5px;
+    border: 2px 2px 4px solid black;
+}
+
+
+
+
+

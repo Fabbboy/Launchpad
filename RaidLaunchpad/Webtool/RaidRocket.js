@@ -23,32 +23,88 @@
         }
 
         function leave_tokens() {
+         const errormsg = document.getElementById('error');
+        if(!document.getElementById('leave').value){
+            errormsg.style.visibility = "visible"
 
+           setTimeout(function(){
+            errormsg.style.visibility = "hidden"
+            return
+            }, 2000);
+        return
+        }else{
          const leave = get_data(`leave-server/${document.getElementById('leave').value}`);
+         }
         }
 
         function nick_tokens() {
+   const errormsg = document.getElementById('error');
+        if(!document.getElementById('nickId').value){
+            errormsg.style.visibility = "visible"
 
+           setTimeout(function(){
+            errormsg.style.visibility = "hidden"
+            return
+            }, 2000);
+        return
+        }else{
+          if(!document.getElementById('nick').value){
+            errormsg.style.visibility = "visible"
+
+           setTimeout(function(){
+            errormsg.style.visibility = "hidden"
+            return
+            }, 2000);
+        return
+        }else{
           const start = post_data(`change-nick/${document.getElementById('nickId').value}`, {
             'nick': document.getElementById('nick').value
           });
-
+}}
         }
 
         function disguise_tokens() {
 
-          const hide = get_data(`disguise/${document.getElementById('disId').value}`)
+        const errormsg = document.getElementById('error');
+        if(!document.getElementById('disId').value){
+            errormsg.style.visibility = "visible"
 
+           setTimeout(function(){
+            errormsg.style.visibility = "hidden"
+            return
+            }, 2000);
+        return
+        }else{
+          const hide = get_data(`disguise/${document.getElementById('disId').value}`)
+}
         }
 
         function speak_tokens() {
+   const errormsg = document.getElementById('error');
+        if(!document.getElementById('sendId').value){
+            errormsg.style.visibility = "visible"
 
+           setTimeout(function(){
+            errormsg.style.visibility = "hidden"
+            return
+            }, 2000);
+        return
+        }else{
+              if(!document.getElementById('msg').value){
+            errormsg.style.visibility = "visible"
+
+           setTimeout(function(){
+            errormsg.style.visibility = "hidden"
+            return
+            }, 2000);
+        return
+        }else{
           const speak = post_data(`speak/${document.getElementById('sendId').value}`, {
             'message_content': document.getElementById('msg').value
           });
-
+}}
         }
-
+/*
         function react_tokens() {
 
           const react = post_data(`react`, {
@@ -58,14 +114,33 @@
           });
 
         }
-
+*/
         function start_spam() {
+           const errormsg = document.getElementById('error');
+        if(!document.getElementById('SpamId').value){
+            errormsg.style.visibility = "visible"
+
+           setTimeout(function(){
+            errormsg.style.visibility = "hidden"
+            return
+            }, 2000);
+        return
+        }else{
+               if(!document.getElementById('SpamMsg').value){
+            errormsg.style.visibility = "visible"
+
+           setTimeout(function(){
+            errormsg.style.visibility = "hidden"
+            return
+            }, 2000);
+        return
+        }else{
           const start = post_data(`spam/${document.getElementById('SpamId').value}`, {
             'channel_id': document.getElementById('SpamId').value,
             'message_content': document.getElementById('SpamMsg').value,
             'mode': "1"
           });
-
+}}
         }
 
         function stop_spam() {

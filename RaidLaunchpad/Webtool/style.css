@@ -1,10 +1,11 @@
 *{
-
+    font-family: "Courier New", Courier, monospace;
+    font-weight: 600;
 }
 html,
 body{
     width: 90%;
-    color: #FE72F3;
+
 
  background: #2B2B2B;
     height: 100%;
@@ -16,12 +17,12 @@ ul{
     display: grid;
     gap: 20px; /* distance between list items */
     grid-template-columns: 3fr 3fr 3fr;
-    margin-left: 70px;
+    margin-left: 90px;
 }
 li{
 
     width: 320px;
-    height: 220px;
+    height: 240px;
     background: #494949;
     border: 2px solid #1d1c1c;
     align-items: center;
@@ -37,14 +38,38 @@ input{
 
 }
 button{
+    font-size: 25px;
     width: 93%;
     margin: 10px;
-    height: 35px;
+    height: 40px;
     border-radius: 5px;
-    border: 2px 2px 4px solid black;
+    border: 2px solid #000000;
+    box-shadow: 1px 1px 2px black;
+    background: rgb(98, 0, 255);
 }
-
-
+button:hover{
+    box-shadow: 0px 0px 1px black;
+}
+.console{
+    font-size: 20px;
+}
+.error{
+    width: 290px;
+    height: 40px;
+    background: red;
+    color: white;
+    border-radius: 10px;
+    position: fixed;
+    bottom: 20px;
+    left: 38.5%;
+    visibility: hidden;
+}
+.errorMsg{
+    font-size: 18px;
+    position: fixed;
+    bottom: 30px;
+    left: 38.8%;
+}
 
 
 

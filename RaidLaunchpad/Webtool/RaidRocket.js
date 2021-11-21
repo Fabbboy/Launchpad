@@ -7,9 +7,19 @@
 
         function join_tokens() {
           const inviteLink = document.getElementById('invite').value;
+          const errormsg = document.getElementById('error');
+          if(!inviteLink){
+           errormsg.style.visibility = "visible"
+
+           setTimeout(function(){
+            errormsg.style.visibility = "hidden"
+            return
+            }, 2000);
+          }else{
           const join = post_data('join-server', {
             'invite': inviteLink
           });
+        }
         }
 
         function leave_tokens() {

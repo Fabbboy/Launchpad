@@ -6,16 +6,16 @@ from flask import Flask
 from src.app import api_bp
 from src.core.Container import tokens
 
-CURRENT_VERSION = 0.1
+CURRENT_VERSION = 0.5
 
 
 def check_for_updates():
     update = float(requests.get('https://raidAPI.networksite.repl.co').text)
 
     if update <= CURRENT_VERSION:
-        return f'{Fore.LIGHTWHITE_EX}Newest version.{Fore.RESET}'
+        return f'{Fore.LIGHTGREEN_EX}Newest version.{Fore.RESET}'
     else:
-        return f'{Fore.LIGHTYELLOW_EX}You need a update.{Fore.RESET}'
+        return f'{Fore.LIGHTYELLOW_EX}You need a update. Join our Discord for the files and more info{Fore.RESET}'
 
 
 quotes = [
@@ -25,14 +25,14 @@ quotes = [
 # os.system('cls')
 # {Fore.RESET}{Fore.LIGHTMAGENTA_EX}@ Name: {Fore.WHITE}RaidLaunchpad{Fore.LIGHTMAGENTA_EX}
 startup = Style.BRIGHT + f'''
-┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ RaidLaunchpad ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓ 
-  ████████╗ █████╗ ██╗  ██╗██╗ █████╗  Launchpad[$]~Name: RaidLaunchpad
+{Fore.LIGHTGREEN_EX}┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ RaidLaunchpad ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓ 
+  ████████╗ █████╗ ██╗  ██╗██╗ █████╗  Launchpad[$]~Name: {Fore.LIGHTGREEN_EX}RaidLaunchpad{Fore.RESET}
   ╚══██╔══╝██╔══██╗╚██╗██╔╝██║██╔══██╗ Launchpad[$]~Version: {CURRENT_VERSION} ~ {check_for_updates()}
-     ██║   ██║  ██║ ╚███╔╝ ██║██║  ╚═╝ Launchpad[$]~Tokens: {Fore.WHITE + str(len(tokens.return_tokens())) + "" + Fore.GREEN}
-     ██║   ██║  ██║ ██╔██╗ ██║██║  ██╗ Launchpad[$]~Disclaimer: on your own risk
-     ██║   ╚█████╔╝██╔╝╚██╗██║╚█████╔╝ Launchpad[$]~Today: {random.choice(quotes)}
+     ██║   ██║  ██║ ╚███╔╝ ██║██║  ╚═╝ Launchpad[$]~Tokens: {Fore.LIGHTGREEN_EX + str(len(tokens.return_tokens())) + "" + Fore.LIGHTGREEN_EX}
+     ██║   ██║  ██║ ██╔██╗ ██║██║  ██╗ Launchpad[$]~Disclaimer: {Fore.LIGHTGREEN_EX}on your own risk{Fore.RESET}
+     ██║   ╚█████╔╝██╔╝╚██╗██║╚█████╔╝ Launchpad[$]~Today: {Fore.LIGHTGREEN_EX}{random.choice(quotes)}{Fore.RESET}
      ╚═╝    ╚════╝ ╚═╝  ╚═╝╚═╝ ╚════╝ 
-{Fore.LIGHTMAGENTA_EX} ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ RaidLaunchpad ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛ 
+{Fore.LIGHTGREEN_EX}┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ RaidLaunchpad ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛ 
 '''.replace('█', f'{Fore.WHITE}█{Fore.LIGHTMAGENTA_EX}')
 
 print(startup)

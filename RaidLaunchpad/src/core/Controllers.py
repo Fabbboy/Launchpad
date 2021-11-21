@@ -104,7 +104,7 @@ def all_bots_join(invite_link):
 
     execute_threads(join_threads, random.randint(0, 2))
 
-    return response(200, "All bots have attempted to join the target server.")
+    return response(200, f"All bots have attempted to join the target server. Server invite: {invite_link}")
 
 
 def all_bots_leave(server_id):
@@ -117,7 +117,7 @@ def all_bots_leave(server_id):
 
     execute_threads(leave_threads)
 
-    return response(200, "All bots have attempted to leave the target server.")
+    return response(200, f"All bots have attempted to leave the target server. Server: {server_id}")
 
 
 def change_all_bots_nick(server_id, nick):
@@ -130,7 +130,7 @@ def change_all_bots_nick(server_id, nick):
 
     execute_threads(nick_threads)
 
-    return response(200, "Attempted to change all bot nicknames.")
+    return response(200, f"Try to change bot names to {nick}")
 
 
 def disguise_all_bots(server_id):
@@ -143,7 +143,7 @@ def disguise_all_bots(server_id):
 
     execute_threads(disguise_threads)
 
-    return response(200, "All bots attempted to disguise.")
+    return response(200, "All bots tryed to disguise.")
 
 
 def all_bots_speak(server_id, message):
